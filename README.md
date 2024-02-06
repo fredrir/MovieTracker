@@ -4,6 +4,106 @@
 
 ## Getting started
 
+First clone a copy of the repo.
+```
+Using SSH: 
+git clone git@gitlab.stud.idi.ntnu.no:tdt4140-2024/produktomraade-4/gruppe-67/film.git
+
+Using HTTPS: 
+git clone https://gitlab.stud.idi.ntnu.no/tdt4140-2024/produktomraade-4/gruppe-67/film.git
+```
+Then make sure you have the latest version of NodeJS installed. If you are unsure try running 
+```
+node -v
+```
+It should return something like this:
+```
+10.2.4
+```
+If you don't have NodeJS installed, you can install it by following the instructions on page
+**For mac:**
+```
+brew install node
+```
+**For Windows:**  
+First install Chocolatey by following the instructions on this link: https://chocolatey.org/install (Note: You don't necessarily need chocolatey to install NodeJS, but it's a good package manager to have for Windows. And it makes it easier to install NodeJS.)
+
+Then run the following command in the terminal:
+```
+choco install nodejs.install
+```
+If you get any errors make sure you are running the with admin privileges and verify your chocolatey installation by running the following command:
+```
+choco -v
+```
+
+Verify your Node install by running the following command in the terminal:
+```
+npm -v
+```
+It should return something like this:
+```
+film git:(main) ✗ npm -v           
+10.2.4
+```
+Then navigate to the root of the project and run the following command to install all the necessary dependencies. (This might take a bit of time)
+```
+cd film
+npm install
+```
+If you get an error like this
+```
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /home/nils/Documents/Skole/V24/PU/Film/film/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/home/nils/Documents/Skole/V24/PU/Film/film/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in: /home/nils/.npm/_logs/2024-02-05T20_31_47_454Z-debug-0.log
+```
+Then you should run the following command:
+```
+cd film
+```
+And after that try running the following command again:
+```
+npm install
+```
+After that you should be able to run the project by running the following command:
+```
+npm run dev
+```
+Then open your browser and navigate to http://localhost:3000/ to see the project running!
+
+
+## Before making a pull request:
+Before making a pull request, make sure to run the following command to make sure that the code is formatted correctly.
+```
+npx prettier . --write
+```
+Then run the Linter
+```
+npm run lint
+```
+If the Linter returns any errors, you should fix them before making a pull request.
+The linter should return something like this when all errors are resolved:
+```
+
+> film@0.1.0 lint
+> next lint
+
+✔ No ESLint warnings or errors
+```
+If both of those are good then submit a pull request and ask someone from the group and get it reviewed and merged!!🔥🔥🔥
+
+
+
+The rest of this readme is boilerplate from GitLab, and is not relevant to our project.
+```
+
+
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
