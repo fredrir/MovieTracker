@@ -78,6 +78,15 @@ npm run dev
 Then open your browser and navigate to http://localhost:3000/ to see the project running!
 
 
+## Setting up db connection
+```sh
+$ vercel env pull .env.development.local
+```
+
+If you don't have permission, ask Jonas for the file directly :))
+
+It should be put inside the [./film](./film/) subdirectory.
+
 ## Before making a pull request:
 Before making a pull request, make sure to run the following command to make sure that the code is formatted correctly.
 ```
