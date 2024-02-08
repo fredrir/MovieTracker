@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -10,7 +9,6 @@ const inter = Inter({ subsets: ["latin"] });
 //   title: "Filmer",
 //   description: "Nettside for å vise filmer",
 // };
-
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
