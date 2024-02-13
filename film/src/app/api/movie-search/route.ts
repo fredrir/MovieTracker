@@ -1,12 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { MoviesResponse } from "../../../../models/movie";
-
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const page = searchParams.get("page") || "1";
     const query = searchParams.get("query") || "Dune";
-    const fetch = require("node-fetch");
     const roundPage = Math.round(
       typeof page === "string" ? parseInt(page, 10) : 1,
     );
@@ -22,7 +18,8 @@ export async function GET(request: Request) {
     };
 
     const response = await fetch(url, options);
-    return Response.json({ response });
+    const data = await response.json();
+    return Response.json({ data });
   } catch (error) {
     return Response.json({ 404: "error" });
   }

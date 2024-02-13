@@ -18,7 +18,6 @@ const genreTable: Record<number, string> = {
   53: "Thriller",
   10752: "War",
   37: "Western",
-
   // TV Genres
   10759: "Action & Adventure",
   10762: "Kids",
@@ -31,5 +30,10 @@ const genreTable: Record<number, string> = {
 };
 
 export default function getGenreFromId(id: number) {
-  return genreTable[id];
+  try {
+    return genreTable[id];
+  } catch (e) {
+    console.error(e);
+    return "failed";
+  }
 }
