@@ -12,10 +12,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
-      <Navbar />
-      <main>{children}</main>
-    </>
+    <html>
+      <body className="">
+        <Navbar />
+        <main>{children}</main>
+      </body>
+    </html>
   );
 };
 
