@@ -2,7 +2,7 @@
 import FilmCard from "@/app/filmcards/FilmCard";
 import { useRouter } from "next/router";
 import { Movie, MoviesResponse } from "../../models/movie";
-import RootLayout from "./layout";
+import RootLayout from "../../app/layout";
 import { useEffect, useState } from "react";
 
 /*class Movie {
