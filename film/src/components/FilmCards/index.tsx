@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { Movie, MoviesResponse } from "../../models/movie";
 import RootLayout from "../../app/layout";
 import { useEffect, useState } from "react";
+import { GET } from "@/app/api/get-trending-movies/route";
 
 /*class Movie {
   id: string = "";
@@ -12,27 +13,16 @@ import { useEffect, useState } from "react";
   description: string = "";
 }*/
 
-export default function Home() {
+export default async function Home() {
   const router = useRouter();
   const handleFilmClick = (filmID: number) => {
     router.push(`/movies/${filmID}`);
   };
-  const [movies, setMovies] = useState<Movie[]>([]);
 
-  useEffect(() => {
-    // Function to fetch movies from the API
-    const fetchMovies = async () => {
-      try {
-        const response = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=${roundPage}&region=NO');
-        const data: MoviesResponse = await response.json();
-        setMovies(data.results); // Assuming the API response contains the movie results directly
-      } catch (error) {
-        console.error('Error fetching movies:', error);
-      }
-    };
-
-    fetchMovies();
-  }, []);
+    const url = "http://localhost:3000/api/get-trending-movies?page=2";
+    const request = new Request(url);
+    const response = await GET(request);
+    const data = await response.json();
 
   // adding a movie this way is temporary until the API works and we get real movies
   /*const m = new Movie();
@@ -47,7 +37,7 @@ export default function Home() {
       <div>
         <h1>Movie Gallery</h1>
         <div className="movie-grid">
-          {movies.map((movie: Movie) => (
+          {data.map((movie: Movie) => (
             <FilmCard
               key={movie.id}
               title={movie.title}
@@ -60,4 +50,4 @@ export default function Home() {
       </div>
     </RootLayout>
   );
-}
+};
