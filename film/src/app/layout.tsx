@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./ui/navbar";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,6 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 //   title: "Filmer",
 //   description: "Nettside for å vise filmer",
 // };
+
+<Link href="/not-existing-route">Not Found</Link>
+
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
