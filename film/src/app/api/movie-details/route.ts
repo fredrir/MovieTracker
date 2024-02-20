@@ -1,14 +1,9 @@
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const page = searchParams.get("page") || "1";
-    const query = searchParams.get("query") || "Dune";
-    const roundPage = Math.round(
-      typeof page === "string" ? parseInt(page, 10) : 1,
-    );
-    const searchQuery = query;
-    console.log(searchParams.get("query"))
-    const url = `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=true&language=en-US&page=${roundPage}`;
+    const id = searchParams.get("id") || "1";
+    const url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
+    console.log(url);
     const options = {
       method: "GET",
       headers: {
