@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
     return (
-        <footer className="bg-blue-400 text-white p-4">
+        <footer className="bg-slate-950 text-white p-4">
             <div className="text-dark-blue text-lg font-Lusitana mb-10 text-center"> {/* mb-10=botoom margin i Tailwind CSS */}
                 You have reached the bottom of the website!
             </div>                                                  {/*dark blue text, font size = medium, font=Lusitana */}
@@ -15,12 +15,12 @@ export default function Footer() {
                     <div>EMAIL FORM HERE </div>
                 </div>
                 <Link href="/privacy">
-                <button type="button" className="px-4 py-2 bg-blue-400 text-white rounded underline">
+                <button type="button" className="px-4 py-2 bg-blue-950 text-white rounded underline">
                         Our terms of service
                     </button>
                 </Link> 
                 <Link href="/terms-of-service">
-                    <button type="button" className="px-4 py-2 bg-blue-400 text-white rounded underline">
+                    <button type="button" className="px-4 py-2 bg-blue-950 text-white rounded underline">
                         Our terms of service
                     </button>
                 </Link>

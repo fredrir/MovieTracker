@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./ui/navbar";
+import Footer from "./ui/footer";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +21,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className="">
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

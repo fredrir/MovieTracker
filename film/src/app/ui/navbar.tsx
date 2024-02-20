@@ -17,6 +17,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -65,6 +66,22 @@ export default function Navbar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const router = useRouter();
+
+  const HomePage = () => {
+    router.push("/homepage");
+  }
+
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter') {
+      // Assuming you have a search input field to capture the user's query
+      const searchQuery = (event.target as HTMLInputElement).value;
+      // Perform the navigation. Adjust the URL as needed.
+      // For example, navigate to '/search' with the search query as a parameter
+      router.push(`/search/${searchQuery}`);
+    }
+  };
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -163,7 +180,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: '#000000' }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -174,7 +191,7 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-          <Link href="/">
+          <Link href="/homepage">
             <Typography
               variant="h6"
               noWrap
@@ -191,6 +208,7 @@ export default function Navbar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              onKeyPress={handleKeyPress}
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
