@@ -117,11 +117,11 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <Link href="/login">
+      <Link href="/profile">
         <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       </Link>
       <Link href="/login">
-        <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+        <MenuItem onClick={handleMenuClose}>Log In</MenuItem>
       </Link>
     </Menu>
   );
