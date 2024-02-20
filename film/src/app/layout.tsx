@@ -7,10 +7,6 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata: Metadata = {
-//   title: "Filmer",
-//   description: "Nettside for å vise filmer",
-// };
 
 <Link href="/not-existing-route">Not Found</Link>
 
