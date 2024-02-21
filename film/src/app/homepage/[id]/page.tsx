@@ -25,11 +25,12 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <>
       <div className="justify-center flex">
-        {movieDetails &&<MovieOverviewCard
+        {movieDetails && <MovieOverviewCard
           movie_title={movieDetails?.title}
           movie_image={movieDetails?.backdrop_path}
           movie_description={movieDetails?.overview}
-        /> }
+          movie_id={movieDetails?.id}
+        />}
       </div>
       {/* <button 
       className="fixed bottom-20 left-10 outline p-2 rounded hover:bg-slate-700"
