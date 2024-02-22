@@ -179,7 +179,7 @@ export default function Navbar() {
               component="div"
               sx={{ display: { xs: "none", sm: "block" } }}
             >
-              Filmer
+              Trending
             </Typography>
           </Link>
           <Link href="/watchlist" className="pl-2 hover:text-slate-500">
