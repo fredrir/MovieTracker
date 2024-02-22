@@ -172,7 +172,7 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "#000000" }}>
         <Toolbar>
-          <Link href="/" className="pl-2 hover:text-slate-500">
+          <Link href="/" className="hover:text-slate-500">
             <Typography
               variant="h6"
               noWrap
@@ -190,7 +190,7 @@ export default function Navbar() {
               sx={{ display: { xs: "none", sm: "block" } }}
             >
               {/* ugly hack */}
-              &nbsp;Watchlist
+              Watchlist
             </Typography>
           </Link>
           <Link href="/likelist" className="pl-2 hover:text-slate-500">
@@ -201,7 +201,7 @@ export default function Navbar() {
               sx={{ display: { xs: "none", sm: "block" } }}
             >
               {/* ugly hack */}
-              &nbsp;Liked
+              Liked
             </Typography>
           </Link>
           <Link href="/Recommendations" className="pl-2 hover:text-slate-500">
