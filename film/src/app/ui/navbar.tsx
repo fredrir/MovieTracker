@@ -204,7 +204,7 @@ export default function Navbar() {
               Liked
             </Typography>
           </Link>
-          <Link href="/Recommendations" className="pl-2 hover:text-slate-500">
+          <Link href="/recommendations" className="pl-2 hover:text-slate-500">
             <Typography
               variant="h6"
               noWrap
