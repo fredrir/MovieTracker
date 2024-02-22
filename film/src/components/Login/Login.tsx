@@ -4,7 +4,7 @@ const handleLogin = (): void => {
   const client_id: string =
     "112265870306-9oeq4ni4useoha8ejd9lqj8qsh62p5eg.apps.googleusercontent.com";
   const redirect_uri: string = encodeURIComponent(
-    "http://localhost:3000/callback",
+    `${location.protocol}//${window.location.host}/callback`,
   );
   const scope: string = encodeURIComponent(
     "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",

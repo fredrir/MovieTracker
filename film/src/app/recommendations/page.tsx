@@ -11,7 +11,7 @@ export default function Recomendations() {
       try {
         const genres: number[] = await getRecomendedGenres("1");
         console.log("genres" + genres);
-        const url = `http://localhost:3000/api/movie-recommendations?genre=${genres.join(",")}`;
+        const url = `/api/movie-recommendations?genre=${genres.join(",")}`;
         const request = new Request(url);
         const response = await GET(request);
         const data = await response.json();

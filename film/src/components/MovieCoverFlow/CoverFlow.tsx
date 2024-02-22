@@ -32,10 +32,8 @@ const CoverFlow: React.FC<CoverFlowProps> = ({ type, searchQuery, where }) => {
     if (selectedGenre == oldSelectedGenre) {
       oldMovies = movies;
     }
-    console.log("Laster side: " + page);
     if (type == "Trending" && selectedGenre == "Genre:") {
-      console.log("her");
-      const url = `http://localhost:3000/api/get-trending-movies?page=${page}`;
+      const url = `/api/get-trending-movies?page=${page}`;
       const request = new Request(url);
       const response = await GETTrending(request);
       const data = await response.json();
@@ -45,15 +43,13 @@ const CoverFlow: React.FC<CoverFlowProps> = ({ type, searchQuery, where }) => {
       searchQuery != null &&
       selectedGenre == "Genre:"
     ) {
-      console.log("her2");
-      const url = `http://localhost:3000/api/movie-search?page=${page}&query=${searchQuery}`;
+      const url = `/api/movie-search?page=${page}&query=${searchQuery}`;
       const request = new Request(url);
       const response = await GETSearch(request);
       const data = await response.json();
       setMovies(oldMovies.concat(await data.data.results));
     } else if (selectedGenre != "Genre:") {
-      console.log("her3");
-      const url = `http://localhost:3000/api/movies-by-genre?page=${page}&genre=${selectedGenre}`;
+      const url = `/api/movies-by-genre?page=${page}&genre=${selectedGenre}`;
       const request = new Request(url);
       const response = await GETGenre(request);
       const data = await response.json();

@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     async function fetchMovies() {
-      const url = `http://localhost:3000/api/movie-details?id=${params.id}`;
+      const url = `/api/movie-details?id=${params.id}`;
       const request = new Request(url);
       const response = await GET(request);
       const data = await response.json();

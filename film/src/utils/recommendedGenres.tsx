@@ -27,7 +27,7 @@ export async function getRecomendedGenres(userId: String): Promise<number[]> {
 
 async function getGenres(movieId: String) {
   try {
-    const url = `http://localhost:3000/api/movie-details?id=${movieId}`;
+    const url = `/api/movie-details?id=${movieId}`;
     const request = new Request(url);
     const response = await GET(request);
     const data = await response.json();
