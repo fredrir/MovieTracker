@@ -24,7 +24,6 @@ export default function HomePage() {
     const url = `/api/db/${table}-list?userid=1`;
     const response = await fetch(url);
     const json: { films: number[] } = await response.json();
-    console.log("films", json)
     setter(json.films)
   }
 

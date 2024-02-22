@@ -2,7 +2,6 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const page = searchParams.get("page") || "1";
-    console.log(page);
     const roundPage = Math.round(
       typeof page == "string" ? parseInt(page, 10) : 1,
     );
