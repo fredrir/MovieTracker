@@ -18,7 +18,16 @@ const handleLogin = (): void => {
 };
 
 const Login: React.FC = () => {
-  return <button onClick={handleLogin}>Login with Google</button>;
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <button
+        onClick={handleLogin}
+        className="text-white bg-blue-500 hover:bg-blue-700 font-bold py-4 px-8 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+      >
+        Login with Google
+      </button>
+    </div>
+  );
 };
 
 export default Login;

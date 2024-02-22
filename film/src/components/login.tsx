@@ -23,13 +23,8 @@ const Login: React.FC = () => {
     <div className="flex justify-center items-center h-screen">
       <button
         onClick={handleLogin}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+        className="text-white bg-blue-500 hover:bg-blue-700 font-bold py-4 px-8 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
       >
-        <img
-          src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png"
-          alt="Sign in with Google"
-          className="mr-2"
-        />
         Login with Google
       </button>
     </div>
