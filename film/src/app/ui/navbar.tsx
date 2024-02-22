@@ -201,6 +201,17 @@ export default function Navbar() {
               Filmer
             </Typography>
           </Link>
+          <Link href="/watchlist">
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              {/* ugly hack */}
+              &nbsp;Watchlist
+            </Typography>
+          </Link>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
