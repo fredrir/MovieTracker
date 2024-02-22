@@ -190,7 +190,7 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-          <Link href="/homepage">
+          <Link href="/homepage" className="pl-2 hover:text-slate-500">
             <Typography
               variant="h6"
               noWrap
@@ -200,7 +200,7 @@ export default function Navbar() {
               Filmer
             </Typography>
           </Link>
-          <Link href="/watchlist">
+          <Link href="/watchlist" className="pl-2 hover:text-slate-500">
             <Typography
               variant="h6"
               noWrap
@@ -211,7 +211,7 @@ export default function Navbar() {
               &nbsp;Watchlist
             </Typography>
           </Link>
-          <Link href="/likelist">
+          <Link href="/likelist" className="pl-2 hover:text-slate-500">
             <Typography
               variant="h6"
               noWrap
