@@ -3,7 +3,6 @@ import FilmCard from "@/components/FilmCard/FilmCard";
 import { useEffect, useState } from "react";
 import { GET } from "../api/movie-details/route";
 import { MovieDetails } from "@/models/movieDetails";
-import { MovieOverviewCard } from "@/components/MovieOverviewCard/MovieOverviewCard";
 import { useRouter } from "next/navigation";
 
 export default function HomePage() {
@@ -27,7 +26,7 @@ export default function HomePage() {
     setter(json.films)
   }
 
-  useEffect(() => { fetchDb("watched", setIds); }, []);
+  useEffect(() => { fetchDb("like", setIds); }, []);
 
   useEffect(() => {
     (async () => {
@@ -42,7 +41,7 @@ export default function HomePage() {
 
   return (
     <>
-      <h1 className="text-center text-4xl">Watched Movies</h1>
+      <h1 className="text-center text-4xl">Liked Movies</h1>
       <div className="grid grid-cols-6 gap-2">
         {movieDetails?.map(movie => (
           <FilmCard

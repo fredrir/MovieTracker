@@ -211,6 +211,17 @@ export default function Navbar() {
               &nbsp;Watchlist
             </Typography>
           </Link>
+          <Link href="/likelist">
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              {/* ugly hack */}
+              &nbsp;Liked
+            </Typography>
+          </Link>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
