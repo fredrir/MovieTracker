@@ -1,11 +1,10 @@
 import React from "react";
 
 const handleLogin = (): void => {
-  console.log(window.location.host);
   const client_id: string =
     "112265870306-9oeq4ni4useoha8ejd9lqj8qsh62p5eg.apps.googleusercontent.com";
   const redirect_uri: string = encodeURIComponent(
-    `${location.protocol}//${window.location.host}/callback`,
+    "http://localhost:3000/callback",
   );
   const scope: string = encodeURIComponent(
     "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",

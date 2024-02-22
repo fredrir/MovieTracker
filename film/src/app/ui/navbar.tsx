@@ -70,11 +70,10 @@ export default function Navbar() {
 
   const HomePage = () => {
     router.push("/homepage");
-  }
-
+  };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       // Assuming you have a search input field to capture the user's query
       const searchQuery = (event.target as HTMLInputElement).value;
       // Perform the navigation. Adjust the URL as needed.
@@ -180,7 +179,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#000000' }}>
+      <AppBar position="static" sx={{ backgroundColor: "#000000" }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -222,6 +221,16 @@ export default function Navbar() {
               onKeyPress={handleKeyPress}
             />
           </Search>
+          <Link href="/Recommendations" className="pl-2 hover:text-slate-500">
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              Recommendations
+            </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton

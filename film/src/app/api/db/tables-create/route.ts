@@ -2,8 +2,8 @@ import { sql } from "@vercel/postgres";
 import { NextResponse } from "next/server";
 
 // the PAIN
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store'
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 export async function GET(request: Request) {
   try {
@@ -29,8 +29,8 @@ export async function GET(request: Request) {
         PRIMARY KEY (folk_id, tmdb_id),
         FOREIGN KEY (folk_id) REFERENCES folk(id)
       );
-      `
-    ]
+      `,
+    ];
 
     return NextResponse.json({ result: results }, { status: 200 });
   } catch (error) {
