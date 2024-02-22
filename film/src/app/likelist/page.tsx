@@ -50,7 +50,7 @@ export default function HomePage() {
             image={"https://image.tmdb.org/t/p/original/" + movie.backdrop_path}
             description=""
             onClick={() => {
-              router.push(`/homepage/${movie.id}`);
+              router.push(`/${movie.id}`);
             }}
           />
         ))}

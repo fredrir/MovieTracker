@@ -68,7 +68,7 @@ export default function Navbar() {
   const router = useRouter();
 
   const HomePage = () => {
-    router.push("/homepage");
+    router.push("/");
   };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -172,7 +172,7 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "#000000" }}>
         <Toolbar>
-          <Link href="/homepage" className="pl-2 hover:text-slate-500">
+          <Link href="/" className="pl-2 hover:text-slate-500">
             <Typography
               variant="h6"
               noWrap
@@ -216,16 +216,16 @@ export default function Navbar() {
           </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-              onKeyPress={handleKeyPress}
-            />
-          </Search>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+                onKeyPress={handleKeyPress}
+              />
+            </Search>
             <IconButton
               size="large"
               edge="end"
