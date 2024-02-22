@@ -37,9 +37,8 @@ export default function ProfilePage() {
 
   return (
     <RootLayout>
-      <div className="">
-        <h1>{userName ? `Welcome, ${userName}!` : "Loading..."}</h1>
-        <p></p>
+      <div className="flex flex-col justify-center items-center h-screen">
+        <h1 className="text-4xl font-bold text-center">{userName ? `Welcome, ${userName}!` : "Loading..."}</h1>
       </div>
     </RootLayout>
   );
