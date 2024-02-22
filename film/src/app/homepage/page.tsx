@@ -9,7 +9,7 @@ import CoverFlow from "@/components/MovieCoverFlow/CoverFlow";
 export default function HomePage() {
   return (
     <>
-      <CoverFlow type="Trending" where="main"/>
+      <CoverFlow type="Trending" where="main" />
     </>
   );
 }

@@ -1,8 +1,8 @@
 import { sql } from "@vercel/postgres";
 import { NextResponse } from "next/server";
 
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store'
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -13,8 +13,9 @@ export async function GET(request: Request) {
     if (!filmid) throw new Error("filmid required");
     if (!userid) throw new Error("userid required");
 
-    const result = await sql`INSERT INTO watched (folk_id, tmdb_id) VALUES (${userid}, ${filmid});`;
-    return NextResponse.json({ result }, { status: 200 })
+    const result =
+      await sql`INSERT INTO watched (folk_id, tmdb_id) VALUES (${userid}, ${filmid});`;
+    return NextResponse.json({ result }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   }

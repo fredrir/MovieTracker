@@ -1,15 +1,9 @@
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const page = searchParams.get("page") || "1";
     const genre = searchParams.get("genre") || "28";
-    const roundPage = Math.round(
-      typeof page === "string" ? parseInt(page, 10) : 1,
-    );
-    const roundGenre = Math.round(
-      typeof genre === "string" ? parseInt(genre, 10) : 1,
-    );
-    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=en-US&page=${roundPage}&sort_by=popularity.desc&with_genres=${roundGenre}`;
+    const genreParam = encodeURIComponent(genre);
+    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genreParam}`;
     const options = {
       method: "GET",
       headers: {
@@ -24,4 +18,8 @@ export async function GET(request: Request) {
   } catch (error) {
     return Response.json({ 404: "error" });
   }
+}
+
+function formatGenre(genreStr: string) {
+  return;
 }

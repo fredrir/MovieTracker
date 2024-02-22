@@ -2,16 +2,14 @@ import {
   AtSymbolIcon,
   KeyIcon,
   ExclamationCircleIcon,
-} from '@heroicons/react/24/outline';
-import { ArrowRightIcon } from '@heroicons/react/20/solid';
+} from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 export default function LoginForm() {
   return (
     <form className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
-        <h1 className={`mb-3 text-2xl`}>
-          Please log in to continue.
-        </h1>
+        <h1 className={`mb-3 text-2xl`}>Please log in to continue.</h1>
         <div className="w-full">
           <div>
             <label
@@ -64,18 +62,22 @@ export default function LoginForm() {
 
 function LoginButton() {
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center', // Center horizontally
-      alignItems: 'center', // Center vertically
-      marginTop: "5px", //flytte login-knappen litt ned
-    }}>
-      <button style={{
-        textAlign: "center",
-        backgroundColor: "blue",
-        color: "white"
-      }}>
-      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center", // Center horizontally
+        alignItems: "center", // Center vertically
+        marginTop: "5px", //flytte login-knappen litt ned
+      }}
+    >
+      <button
+        style={{
+          textAlign: "center",
+          backgroundColor: "blue",
+          color: "white",
+        }}
+      >
+        Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
       </button>
     </div>
   );
