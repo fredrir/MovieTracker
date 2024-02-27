@@ -6,9 +6,9 @@ export const fetchCache = "force-no-store";
 
 export async function GET(request: Request) {
   try {
-    const res = await sql`SELECT name FROM folk`;
+    const res = await sql`SELECT name, id FROM folk`;
     return NextResponse.json(
-      { names: res.rows.map((user) => user.name) },
+      { people: res.rows.map((user) => ({ name: user.name, id: user.id })) },
       { status: 200 },
     );
   } catch (error) {
