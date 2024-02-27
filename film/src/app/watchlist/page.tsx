@@ -21,13 +21,23 @@ export default function HomePage() {
   }
 
   async function fetchDb(table: string, setter: (v: number[]) => void) {
-    const url = `/api/db/${table}-list?userid=1`;
+    const userId = localStorage.getItem("userId" || "1");
+    if (!userId) {
+      console.error("User ID not found in cookies");
+      return;
+    }
+    if (userId) {
+      console.log("User ID found in cookies and is " + userId);
+    }
+    const url = `/api/db/${table}-list?userid=${userId}`;
     const response = await fetch(url);
     const json: { films: number[] } = await response.json();
-    setter(json.films)
+    setter(json.films);
   }
 
-  useEffect(() => { fetchDb("watched", setIds); }, []);
+  useEffect(() => {
+    fetchDb("watched", setIds);
+  }, []);
 
   useEffect(() => {
     (async () => {
@@ -35,7 +45,9 @@ export default function HomePage() {
         return;
       }
 
-      const movies = await Promise.all(ids.map(async (id) => await fetchMovie(id)));
+      const movies = await Promise.all(
+        ids.map(async (id) => await fetchMovie(id)),
+      );
       setMovieDetails(movies);
     })();
   }, [ids]);
@@ -44,7 +56,7 @@ export default function HomePage() {
     <>
       <h1 className="text-center text-4xl">Watched Movies</h1>
       <div className="grid grid-cols-6 gap-2">
-        {movieDetails?.map(movie => (
+        {movieDetails?.map((movie) => (
           <FilmCard
             key={movie.id}
             title={movie.title}

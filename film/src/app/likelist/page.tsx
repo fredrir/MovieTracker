@@ -19,14 +19,39 @@ export default function HomePage() {
     return data.data;
   }
 
-  async function fetchDb(table: string, setter: (v: number[]) => void) {
-    const url = `/api/db/${table}-list?userid=1`;
-    const response = await fetch(url);
-    const json: { films: number[] } = await response.json();
-    setter(json.films)
+  function getCookie(name: string): string | undefined {
+    const nameLenPlus = name.length + 1;
+    return (
+      document.cookie
+        .split(";")
+        .map((c) => c.trim())
+        .filter((cookie) => {
+          return cookie.substring(0, nameLenPlus) === `${name}=`;
+        })
+        .map((cookie) => {
+          return decodeURIComponent(cookie.substring(nameLenPlus));
+        })[0] || undefined
+    );
   }
 
-  useEffect(() => { fetchDb("like", setIds); }, []);
+  async function fetchDb(table: string, setter: (v: number[]) => void) {
+    const userId = localStorage.getItem("userId" || "1");
+    if (!userId) {
+      console.error("User ID not found in cookies");
+      return;
+    }
+    if (userId) {
+      console.log("User ID found in cookies and is " + userId);
+    }
+    const url = `/api/db/${table}-list?userid=${userId}`;
+    const response = await fetch(url);
+    const json: { films: number[] } = await response.json();
+    setter(json.films);
+  }
+
+  useEffect(() => {
+    fetchDb("like", setIds);
+  }, []);
 
   useEffect(() => {
     (async () => {
@@ -34,7 +59,9 @@ export default function HomePage() {
         return;
       }
 
-      const movies = await Promise.all(ids.map(async (id) => await fetchMovie(id)));
+      const movies = await Promise.all(
+        ids.map(async (id) => await fetchMovie(id)),
+      );
       setMovieDetails(movies);
     })();
   }, [ids]);
@@ -43,7 +70,7 @@ export default function HomePage() {
     <>
       <h1 className="text-center text-4xl">Liked Movies</h1>
       <div className="grid grid-cols-6 gap-2">
-        {movieDetails?.map(movie => (
+        {movieDetails?.map((movie) => (
           <FilmCard
             key={movie.id}
             title={movie.title}
