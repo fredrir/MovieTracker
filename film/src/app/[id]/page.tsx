@@ -12,8 +12,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     async function fetchMovies() {
-      console.log(params.id);
-      const url = `http://localhost:3000/api/movie-details?id=${params.id}`;
+      const url = `/api/movie-details?id=${params.id}`;
       const request = new Request(url);
       const response = await GET(request);
       const data = await response.json();
@@ -25,16 +24,15 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <>
       <div className="justify-center flex">
-        {movieDetails &&<MovieOverviewCard
-          movie_title={movieDetails?.title}
-          movie_image={movieDetails?.backdrop_path}
-          movie_description={movieDetails?.overview}
-        /> }
+        {movieDetails && (
+          <MovieOverviewCard
+            movie_title={movieDetails?.title}
+            movie_image={movieDetails?.backdrop_path}
+            movie_description={movieDetails?.overview}
+            movie_id={movieDetails?.id}
+          />
+        )}
       </div>
-      {/* <button 
-      className="fixed bottom-20 left-10 outline p-2 rounded hover:bg-slate-700"
-      onClick={() => router.push("/homepage")}
-      >&#60;----</button> */}
     </>
   );
 }

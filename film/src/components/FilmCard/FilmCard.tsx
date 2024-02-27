@@ -24,7 +24,7 @@ const FilmCard: React.FC<FilmCardProps> = ({
     <>
       <style jsx>{`
         .imageWrapperBase {
-          position: relative; // This is crucial for 'fill' layout to work
+          position: relative;
           width: 100%;
           height: 16rem;
           border-radius: 0.5rem;
