@@ -11,8 +11,7 @@ export async function GET(request: Request) {
 
   try {
     if (!name || !id_str) throw new Error("name and id required");
-    const id = parseInt(id_str);
-    const result = await sql`INSERT INTO folk (id, name) VALUES (${id}, ${name});`;
+    const result = await sql`INSERT INTO folk (id, name) VALUES (${id_str}, ${name});`;
     return NextResponse.json({ result }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
