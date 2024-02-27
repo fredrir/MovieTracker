@@ -27,6 +27,8 @@ export default function ProfilePage() {
 
         const data = await response.json();
         setUserName(data.name);
+
+        localStorage.setItem("userId", data.id);
       } catch (error) {
         console.error("Error fetching user information:", error);
       }
@@ -38,7 +40,9 @@ export default function ProfilePage() {
   return (
     <RootLayout>
       <div className="flex flex-col justify-center items-center h-screen">
-        <h1 className="text-4xl font-bold text-center">{userName ? `Welcome, ${userName}!` : "Loading..."}</h1>
+        <h1 className="text-4xl font-bold text-center">
+          {userName ? `Welcome, ${userName}!` : "Loading..."}
+        </h1>
       </div>
     </RootLayout>
   );
