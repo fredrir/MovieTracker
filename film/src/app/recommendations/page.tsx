@@ -17,7 +17,7 @@ export default function Recomendations() {
         if (userId) {
           console.log("User ID found in cookies and is " + userId);
         }
-        const genres: number[] = await getRecomendedGenres("${userId}");
+        const genres: number[] = await getRecomendedGenres(userId);
         console.log("genres" + genres);
         const url = `/api/movie-recommendations?genre=${genres.join(",")}`;
         const request = new Request(url);
