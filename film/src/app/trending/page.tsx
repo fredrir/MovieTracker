@@ -9,7 +9,9 @@ export default function HomePage() {
 
     return (
         <>
-        <h1>Most watched!</h1>
+        <h1 className="text-center text-4xl">Most watched by our users</h1>
+        <div className="grid grid-cols-6 gap-2">
+        </div>
         </>
     )
 }
