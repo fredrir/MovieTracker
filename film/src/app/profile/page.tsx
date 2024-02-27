@@ -8,7 +8,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     async function fetchDb(userID: string, name: string) {
-      const url = `/api/db/user-register?name=${name}$id=${userID}`;
+      const url = `/api/db/user-register?name=${name}&id=${userID}`;
       const response = await fetch(url);
     }
 
