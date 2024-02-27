@@ -7,6 +7,11 @@ export default function ProfilePage() {
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
+    async function fetchDb(userID: string) {
+      const url = `/api/db/user-register?name=${"lol"}?id=${userID}`;
+      const response = await fetch(url);
+    }
+
     const fetchUserInfo = async () => {
       try {
         const response = await fetch(
@@ -29,6 +34,7 @@ export default function ProfilePage() {
         setUserName(data.name);
 
         localStorage.setItem("userId", data.id);
+        fetchDb(data.id);
       } catch (error) {
         console.error("Error fetching user information:", error);
       }
