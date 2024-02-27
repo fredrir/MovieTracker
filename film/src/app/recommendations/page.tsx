@@ -9,7 +9,15 @@ export default function Recomendations() {
   useEffect(() => {
     async function getNewMovies() {
       try {
-        const genres: number[] = await getRecomendedGenres("1");
+        const userId = localStorage.getItem("userId" || "1");
+        if (!userId) {
+          console.error("User ID not found in cookies");
+          return;
+        }
+        if (userId) {
+          console.log("User ID found in cookies and is " + userId);
+        }
+        const genres: number[] = await getRecomendedGenres("${userId}");
         console.log("genres" + genres);
         const url = `/api/movie-recommendations?genre=${genres.join(",")}`;
         const request = new Request(url);

@@ -18,7 +18,7 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
   const [watched, setWatched] = useState<boolean>();
 
   async function fetchDb(table: string, setter: (v: boolean) => void) {
-    const url = `/api/db/${table}-list?userid=1`;
+    const url = `/api/db/${table}-list?userid=${localStorage.getItem("userId")}`;
     const response = await fetch(url);
     console.log(await response);
     const json: { films: number[] } = await response.json();
@@ -39,7 +39,9 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
     value: boolean,
   ) {
     const method = value ? "delete" : "insert";
-    await fetch(`/api/db/${table}-${method}?filmid=${movie_id}&userid=1`);
+    await fetch(
+      `/api/db/${table}-${method}?filmid=${movie_id}&userid=${localStorage.getItem("userId")}`,
+    );
     setter(!value);
   }
 

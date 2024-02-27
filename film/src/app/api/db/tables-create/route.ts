@@ -10,7 +10,7 @@ export async function GET(request: Request) {
     const results = [
       await sql`
       CREATE TABLE folk (
-        id SERIAL PRIMARY KEY,
+        id VARCHAR(255) PRIMARY KEY,
         name VARCHAR(255)
       );`,
 
