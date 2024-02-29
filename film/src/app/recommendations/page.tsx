@@ -17,15 +17,23 @@ export default function Recommendations() {
         if (!userId) {
           console.error("User ID not found in cookies");
           return;
+        } else {
+          console.log(`userID is: ${userId}`);
         }
         const genres: number[] = await getRecomendedGenres(userId);
         const url = `/api/movie-recommendations?genre=${genres.join(",")}`;
         const request = new Request(url);
         const response = await fetch(request);
         const data = await response.json();
-        setMovies(data.data.results);
+        if (data && data.data && Array.isArray(data.data.results)) {
+          setMovies(data.data.results);
+        } else {
+          console.error("Unexpected response structure:", data);
+          setMovies([]);
+        }
       } catch (error) {
         console.error("Failed to fetch new movies", error);
+        setMovies([]);
       }
     }
     getNewMovies();
@@ -41,9 +49,7 @@ export default function Recommendations() {
             title={movie.title}
             image={"https://image.tmdb.org/t/p/original/" + movie.backdrop_path}
             description=""
-            onClick={() => {
-              router.push(`/${movie.id}`);
-            }}
+            onClick={() => router.push(`/${movie.id}`)}
           />
         ))}
       </div>
