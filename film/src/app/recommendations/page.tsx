@@ -1,5 +1,5 @@
 "use client";
-import { Movie } from "@/models/movie";
+import { Movie } from "@/models/movie"; 
 import { getRecomendedGenres } from "@/utils/recommendedGenres";
 import { useEffect, useState } from "react";
 import { GET } from "../api/movie-recommendations/route";
