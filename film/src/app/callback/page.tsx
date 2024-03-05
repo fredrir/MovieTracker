@@ -13,8 +13,6 @@ const Callback: React.FC = () => {
     if (accessToken) {
       localStorage.setItem("access_token", accessToken);
       router.push("/profile");
-      console.log("Access token found");
-      console.log(window.location.host);
     } else {
       router.push("/error");
       console.error("No access token found");
