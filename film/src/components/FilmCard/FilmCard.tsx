@@ -46,10 +46,9 @@ const FilmCard: React.FC<FilmCardProps> = ({
               {/* Placeholder */}
             </div>
           )}
-          <Image
+          <img
             src={image}
             alt={title}
-            fill={true}
             className="w-full h-full object-cover hover:cursor-pointer hover:opacity-90"
             sizes="(max-width: 768px) 100vw, 33vw"
             onLoad={() => setIsLoaded(true)}
