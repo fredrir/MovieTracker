@@ -1,4 +1,8 @@
-export async function GET(request: Request) {
+import { NextRequest } from "next/server";
+
+export const dynamic = "force-dynamic";
+
+export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const genre = searchParams.get("genre") || "28";
@@ -16,7 +20,7 @@ export async function GET(request: Request) {
     const data = await response.json();
     return Response.json({ data });
   } catch (error) {
-    return Response.json({ 404: "error" });
+    return Response.json({ error });
   }
 }
 
