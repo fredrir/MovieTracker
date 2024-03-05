@@ -19,7 +19,8 @@ export default function Page({ params }: { params: { id: string } }) {
       setMovieDetails(data.data);
     }
     fetchMovies();
-  }, []);
+
+  }, [params.id]);
 
   return (
     <>
