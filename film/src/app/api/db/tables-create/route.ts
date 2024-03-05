@@ -16,7 +16,7 @@ export async function GET(request: Request) {
 
       await sql`
       CREATE TABLE likes (
-        folk_id INT,
+        folk_id VARCHAR(255),
         tmdb_id INT,
         PRIMARY KEY (folk_id, tmdb_id),
         FOREIGN KEY (folk_id) REFERENCES folk(id)
@@ -24,7 +24,7 @@ export async function GET(request: Request) {
 
       await sql`
       CREATE TABLE watched (
-        folk_id INT,
+        folk_id VARCHAR(255),
         tmdb_id INT,
         PRIMARY KEY (folk_id, tmdb_id),
         FOREIGN KEY (folk_id) REFERENCES folk(id)
