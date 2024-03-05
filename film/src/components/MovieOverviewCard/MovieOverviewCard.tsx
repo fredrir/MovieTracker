@@ -20,7 +20,6 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
   async function fetchDb(table: string, setter: (v: boolean) => void) {
     const url = `/api/db/${table}-list?userid=${localStorage.getItem("userId")}`;
     const response = await fetch(url);
-    console.log(await response);
     const json: { films: number[] } = await response.json();
     const in_set = await json.films.includes(movie_id);
     setter(in_set);

@@ -26,7 +26,6 @@ export default function ProfilePage() {
         );
 
         if (!response.ok) {
-          console.log(localStorage.getItem("access_token"));
           throw new Error("Failed to fetch user information");
         }
 
