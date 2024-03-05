@@ -25,9 +25,6 @@ export default function HomePage() {
       console.error("User ID not found in cookies");
       return;
     }
-    if (userId) {
-      console.log("User ID found in cookies and is " + userId);
-    }
     const url = `/api/db/${table}-list?userid=${userId}`;
     const response = await fetch(url);
     const json: { films: number[] } = await response.json();

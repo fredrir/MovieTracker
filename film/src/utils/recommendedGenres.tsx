@@ -20,7 +20,6 @@ export async function getRecomendedGenres(userId: String): Promise<number[]> {
     }
     return findMostPopular(3, genreeee); //cast to number[]
   } catch (error) {
-    console.log(error);
     return [];
   }
 }
@@ -34,7 +33,6 @@ async function getGenres(movieId: String) {
     const genres = data.data.genres.map((genre: Genre) => genre.id);
     return await genres;
   } catch (error) {
-    console.log(error);
     return null;
   }
 }
