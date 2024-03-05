@@ -20,7 +20,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     if (pathname != "/login" && localStorage.getItem("access_token") == null) {
       router.push("/login");
     }
-  }, []);
+    console.log(localStorage.getItem("toooo"));
+  }, [pathname, router]);
   return (
     <html>
       <body className="">

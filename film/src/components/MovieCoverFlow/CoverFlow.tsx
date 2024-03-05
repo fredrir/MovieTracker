@@ -56,7 +56,7 @@ const CoverFlow: React.FC<CoverFlowProps> = ({ type, searchQuery, where }) => {
       setMovies(oldMovies.concat(await data.data.results));
     }
     setOldSelectedGenre(selectedGenre);
-  }, [type, searchQuery, selectedGenre, page]);
+  }, [type, searchQuery, selectedGenre, page, fetching, movies, oldSelectedGenre]);
 
   const handleScroll = useCallback(() => {
     //Prevent multiple fetches
@@ -76,7 +76,7 @@ const CoverFlow: React.FC<CoverFlowProps> = ({ type, searchQuery, where }) => {
   useEffect(() => {
     setPage(1);
     loadMore();
-  }, [selectedGenre, type]);
+  }, [selectedGenre, type, loadMore]);
 
   return (
     <>
