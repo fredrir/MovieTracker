@@ -47,9 +47,9 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
   return (
     <div className="grid grid-cols-1 items-center w-1/3">
       <h1 className="text-center text-xl mt-5 mb-5">{movie_title}</h1>
-      <Image
-        alt="movie backdrop"
+      <img
         src={"https://image.tmdb.org/t/p/original/" + movie_image}
+        alt="movie backdrop"
         className="width-100"
         width={500}
         height={700}
