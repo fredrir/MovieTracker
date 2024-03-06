@@ -17,12 +17,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
   const pathname = usePathname();
   useEffect(() => {
-    console.log(pathname);
     if (pathname != "/login" && localStorage.getItem("access_token") == null) {
       router.push("/login");
     }
     console.log(localStorage.getItem("toooo"));
-  }, []);
+  }, [pathname, router]);
   return (
     <html>
       <body className="">
