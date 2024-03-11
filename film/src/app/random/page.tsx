@@ -12,7 +12,7 @@ export default function RandomPage() {
     const [isLoading, setIsLoading] = useState(false);
     const randomInt = (min:number, max:number) =>
         Math.floor(Math.random() * (max - min + 1)) + min;
-    const randomNumber: number= randomInt(1,900000);
+    const randomNumber: number= randomInt(900000,900010);
     const router = useRouter();
     
     useEffect(() => {
@@ -52,9 +52,11 @@ export default function RandomPage() {
             <div className="flex justify-center items-center h-screen">
                 {isLoading && <p>Loading...</p>}
                 {!isLoading && movieFetched && (
-                    <button onClick={handleButtonClick} className="p-4 bg-blue-500 text-white rounded-md shadow-md">
-                        Get a random movie
-                    </button>
+                    <>
+                        <button onClick={handleButtonClick} className="p-4 bg-blue-500 text-white rounded-md shadow-md">
+                            Get a random movie
+                        </button>
+                    </>
                 )}
             </div>
         </>
