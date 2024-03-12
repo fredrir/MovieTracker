@@ -23,6 +23,14 @@ export async function GET(request: Request) {
       );`,
 
       await sql`
+      CREATE TABLE unlikes (
+        folk_id VARCHAR(255),
+        tmdb_id INT,
+        PRIMARY KEY (folk_id, tmdb_id),
+        FOREIGN KEY (folk_id) REFERENCES folk(id)
+      );`,
+
+      await sql`
       CREATE TABLE watched (
         folk_id VARCHAR(255),
         tmdb_id INT,
