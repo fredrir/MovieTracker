@@ -11,6 +11,7 @@ export default function HomePage() {
     async function getMostWatchedMovies() {
       try {
         const movies: Movie[] = await mostWatchedMovies();
+        setMovies(movies);
       } catch (error) {}
     }
     getMostWatchedMovies();
