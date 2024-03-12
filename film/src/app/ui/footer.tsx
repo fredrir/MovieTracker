@@ -24,7 +24,7 @@ export default function Footer() {
             type="button"
             className="px-4 py-2 bg-blue-950 text-white rounded underline"
           >
-            Our terms of service
+            Privacy Policy
           </button>
         </Link>
         <Link href="/terms-of-service">
@@ -32,7 +32,7 @@ export default function Footer() {
             type="button"
             className="px-4 py-2 bg-blue-950 text-white rounded underline"
           >
-            Our terms of service
+            Terms of Service
           </button>
         </Link>
         <div

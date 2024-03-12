@@ -17,6 +17,7 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
 }) => {
   const [like, setLike] = useState<boolean>();
   const [watched, setWatched] = useState<boolean>();
+  const [unlike, setUnlike] = useState<boolean>();
   const [trailerURL, setTrailerURL] = useState<string>(); //URLen fra TMDB som peker oss til YouTube (eller annen site) som så viser traileren
   const [openYouTubeURL, setOpenYouTubeURL] = useState<boolean>(false); //default er False, dvs vi skal ikke vise YouTube-videoen med en gang
 
@@ -36,6 +37,9 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
   }, [fetchDb]);
   useEffect(() => {
     fetchDb("watched", setWatched);
+  }, [fetchDb]);
+  useEffect(() => {
+    fetchDb("unlike", setUnlike);
   }, [fetchDb]);
 
   async function updateDb(
@@ -144,6 +148,21 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
             : watched
               ? "Remove from watchlist 🙈"
               : "Add to watched 👀"}
+        </button>
+
+        <button
+          className="outline mt-3 ml-3 rounded hover:bg-slate-700"
+          onClick={
+            unlike !== undefined
+              ? () => updateDb("unlike", setUnlike, unlike)
+              : () => {}
+          }
+        >
+          {unlike === undefined
+            ? "Loading..."
+            : unlike
+              ? "Remove from un-liked movies ❌"
+              : "Add to unlike ❤️‍🔥"}
         </button>
       </div>
     </div>

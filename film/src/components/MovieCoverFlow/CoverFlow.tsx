@@ -84,7 +84,8 @@ const CoverFlow: React.FC<CoverFlowProps> = ({ type, searchQuery, where }) => {
   useEffect(() => {
     setPage(1);
     loadMore();
-  }, [selectedGenre, type, loadMore]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedGenre, type]);
 
   return (
     <>
