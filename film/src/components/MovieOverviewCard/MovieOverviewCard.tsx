@@ -83,12 +83,12 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
     <div className="grid grid-cols-1 items-center w-1/3">
       <h1 className="text-center text-xl mt-5 mb-5">{movie_title}</h1>
 
-      <Image
+      <img
         alt="movie backdrop"
         src={
           movie_image
             ? `https://image.tmdb.org/t/p/original/${movie_image}`
-            : "https://via.placeholder.com/700x500.png?text=Default+Image"
+            : "https://image.tmdb.org/t/p/original/lzWHmYdfeFiMIY4JaMmtR7GEli3.jpg"
         }
         className="cursor-pointer text-white font-bold py-4 px-8 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
         width={500}

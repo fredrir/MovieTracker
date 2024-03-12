@@ -7,7 +7,7 @@ export async function GET(request: Request) {
       typeof page === "string" ? parseInt(page, 10) : 1,
     );
     const searchQuery = query;
-    const url = `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=true&language=en-US&page=${roundPage}`;
+    const url = `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=${roundPage}`;
     const options = {
       method: "GET",
       headers: {

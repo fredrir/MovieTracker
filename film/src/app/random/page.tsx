@@ -11,7 +11,7 @@ export default function RandomPage() {
   const [isLoading, setIsLoading] = useState(false);
   const randomInt = (min: number, max: number) =>
     Math.floor(Math.random() * (max - min + 1)) + min;
-  const randomNumber: number = randomInt(900000, 900010);
+  const randomNumber: number = randomInt(1, 1000000);
   const router = useRouter();
 
   useEffect(() => {

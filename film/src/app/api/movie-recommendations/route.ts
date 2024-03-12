@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const genre = searchParams.get("genre") || "28";
     const genreParam = encodeURIComponent(genre);
-    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genreParam}`;
+    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genreParam}`;
     const options = {
       method: "GET",
       headers: {
