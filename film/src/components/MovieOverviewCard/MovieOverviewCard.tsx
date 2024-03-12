@@ -85,7 +85,11 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
 
       <Image
         alt="movie backdrop"
-        src={movie_image ? `https://image.tmdb.org/t/p/original/${movie_image}` : "https://via.placeholder.com/700x500.png?text=Default+Image"}
+        src={
+          movie_image
+            ? `https://image.tmdb.org/t/p/original/${movie_image}`
+            : "https://via.placeholder.com/700x500.png?text=Default+Image"
+        }
         className="cursor-pointer text-white font-bold py-4 px-8 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
         width={500}
         height={700}

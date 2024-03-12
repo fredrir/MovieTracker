@@ -6,10 +6,9 @@ import { MovieDetails } from "@/models/movieDetails";
 import { useRouter } from "next/navigation";
 
 export default function HomePage() {
-
-    return (
-        <>
-        <h1>Most watched!</h1>
-        </>
-    )
+  return (
+    <>
+      <h1>Most watched!</h1>
+    </>
+  );
 }
