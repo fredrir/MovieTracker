@@ -1,9 +1,8 @@
 "use client";
-
+import { Movie } from "@/models/movie"; 
+import { getRecomendedGenres } from "@/utils/recommendedGenres";
 import { useEffect, useState } from "react";
 import FilmCard from "@/components/FilmCard/FilmCard";
-import { getRecomendedGenres } from "@/utils/recommendedGenres";
-import { Movie } from "@/models/movie";
 import { useRouter } from "next/navigation";
 
 export default function Recommendations() {

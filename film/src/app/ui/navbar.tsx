@@ -224,6 +224,16 @@ export default function Navbar() {
               MostWatched
             </Typography>
           </Link>
+          <Link href="/random" className="pl-2 hover:text-slate-500">
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              RandomMovie
+            </Typography>
+          </Link>
           <Link href="/worst-performers" className="pl-2 hover:text-slate-500">
             <Typography
               variant="h6"
