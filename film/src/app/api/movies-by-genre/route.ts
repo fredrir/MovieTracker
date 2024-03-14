@@ -9,7 +9,7 @@ export async function GET(request: Request) {
     const roundGenre = Math.round(
       typeof genre === "string" ? parseInt(genre, 10) : 1,
     );
-    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=en-US&page=${roundPage}&sort_by=popularity.desc&with_genres=${roundGenre}`;
+    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=true&language=en-US&page=${roundPage}&sort_by=popularity.desc&with_genres=${roundGenre}`;
     const options = {
       method: "GET",
       headers: {

@@ -56,7 +56,15 @@ const CoverFlow: React.FC<CoverFlowProps> = ({ type, searchQuery, where }) => {
       setMovies(oldMovies.concat(await data.data.results));
     }
     setOldSelectedGenre(selectedGenre);
-  }, [type, searchQuery, selectedGenre, page, fetching, movies, oldSelectedGenre]);
+  }, [
+    type,
+    searchQuery,
+    selectedGenre,
+    page,
+    fetching,
+    movies,
+    oldSelectedGenre,
+  ]);
 
   const handleScroll = useCallback(() => {
     //Prevent multiple fetches
