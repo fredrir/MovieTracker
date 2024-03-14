@@ -214,15 +214,35 @@ export default function Navbar() {
               Recommendations
             </Typography>
           </Link>
+          <Link href="/trending" className="pl-2 hover:text-slate-500">
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              MostWatched
+            </Typography>
+          </Link>
           <Link href="/worst-performers" className="pl-2 hover:text-slate-500">
             <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ display: { xs: "none", sm: "block" } }}
-              >
-                Worst performers
-              </Typography>
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              Worst performers
+            </Typography>
+          </Link>
+          <Link href="/random" className="pl-2 hover:text-slate-500">
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              RandomMovie
+            </Typography>
           </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

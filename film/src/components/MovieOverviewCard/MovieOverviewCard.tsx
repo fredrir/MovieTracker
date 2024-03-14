@@ -71,7 +71,7 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
     const trailer = data.results.find(
       (video: Video) => video.type === "Trailer" && video.site === "YouTube",
     );
-    if (trailer.site === "YouTube") {
+    if (trailer && trailer.site === "YouTube") {
       const urlYouTube = `https://www.youtube.com/embed/${trailer.key}`; //ved å bruke /embed istendemfor /watch så får vi lov å spille av youtube i samme fane, istedenfor en ny en
       setTrailerURL(urlYouTube); //nå oppdateres HTMLen fordi state endret seg
       //vi kan ikke kaste urlYouTube inn i HTMLen fordi det er en lokal variabel inni viewTrailer(). Derfor trenger vi setTrailerUrl
@@ -87,9 +87,13 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
     <div className="grid grid-cols-1 items-center w-1/3">
       <h1 className="text-center text-xl mt-5 mb-5">{movie_title}</h1>
 
-      <Image
+      <img
         alt="movie backdrop"
-        src={"https://image.tmdb.org/t/p/original/" + movie_image}
+        src={
+          movie_image
+            ? `https://image.tmdb.org/t/p/original/${movie_image}`
+            : "https://image.tmdb.org/t/p/original/lzWHmYdfeFiMIY4JaMmtR7GEli3.jpg"
+        }
         className="cursor-pointer text-white font-bold py-4 px-8 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
         width={500}
         height={700}
