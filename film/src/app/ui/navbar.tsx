@@ -172,78 +172,83 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "#000000" }}>
         <Toolbar>
-          <Link href="/" className="hover:text-slate-500">
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "none", sm: "block" } }}
+          <div className="flex w-full justify-evenly">
+            <Link href="/" className="hover:text-slate-500">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: "none", sm: "block" } }}
+              >
+                Trending
+              </Typography>
+            </Link>
+            <Link href="/watchlist" className="pl-2 hover:text-slate-500">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: "none", sm: "block" } }}
+              >
+                {/* ugly hack */}
+                Watchlist
+              </Typography>
+            </Link>
+            <Link href="/likelist" className="pl-2 hover:text-slate-500">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: "none", sm: "block" } }}
+              >
+                {/* ugly hack */}
+                Liked
+              </Typography>
+            </Link>
+            <Link href="/recommendations" className="pl-2 hover:text-slate-500">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: "none", sm: "block" } }}
+              >
+                Recommendations
+              </Typography>
+            </Link>
+            <Link href="/trending" className="pl-2 hover:text-slate-500">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: "none", sm: "block" } }}
+              >
+                MostWatched
+              </Typography>
+            </Link>
+            <Link
+              href="/worst-performers"
+              className="pl-2 hover:text-slate-500"
             >
-              Trending
-            </Typography>
-          </Link>
-          <Link href="/watchlist" className="pl-2 hover:text-slate-500">
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "none", sm: "block" } }}
-            >
-              {/* ugly hack */}
-              Watchlist
-            </Typography>
-          </Link>
-          <Link href="/likelist" className="pl-2 hover:text-slate-500">
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "none", sm: "block" } }}
-            >
-              {/* ugly hack */}
-              Liked
-            </Typography>
-          </Link>
-          <Link href="/recommendations" className="pl-2 hover:text-slate-500">
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "none", sm: "block" } }}
-            >
-              Recommendations
-            </Typography>
-          </Link>
-          <Link href="/trending" className="pl-2 hover:text-slate-500">
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "none", sm: "block" } }}
-            >
-              MostWatched
-            </Typography>
-          </Link>
-          <Link href="/worst-performers" className="pl-2 hover:text-slate-500">
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "none", sm: "block" } }}
-            >
-              Worst performers
-            </Typography>
-          </Link>
-          <Link href="/random" className="pl-2 hover:text-slate-500">
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "none", sm: "block" } }}
-            >
-              RandomMovie
-            </Typography>
-          </Link>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: "none", sm: "block" } }}
+              >
+                Worst performers
+              </Typography>
+            </Link>
+            <Link href="/random" className="pl-2 hover:text-slate-500">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: "none", sm: "block" } }}
+              >
+                RandomMovie
+              </Typography>
+            </Link>
+          </div>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Search>

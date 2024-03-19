@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { dialogTitleClasses, Dialog } from "@mui/material";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
@@ -86,7 +87,7 @@ export const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({
   return (
     <div className="grid grid-cols-1 items-center w-1/3">
       <h1 className="text-center text-xl mt-5 mb-5">{movie_title}</h1>
-
+      
       <img
         alt="movie backdrop"
         src={
